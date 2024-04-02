@@ -1,0 +1,250 @@
+.FinalizarLabelContainer{
+    display: grid;
+    font-family: "Raleway", sans-serif;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.FinalizarLabel{
+    font-size: 40px;
+}
+
+.carritoContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    font-family: "Raleway", sans-serif;
+    margin-top: 30px;
+}
+    
+.facturacionContainer { grid-area: 1 / 1 / 2 / 2; padding-left: 90px;}
+.confirmarCompraContainer { grid-area: 1 / 2 / 2 / 3; padding-left: 90px; background-color: #fff; border-radius: 38px; background-color: white; box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);}
+
+.form__label {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+}
+  
+.form__input {
+    font-family: "Raleway", sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+      margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: #d2d2d2;
+    border: none;
+    width: 80%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+  
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+
+.form__group{
+    margin-top: 10px;
+}
+
+.lineSeparateMiddle{
+    margin-top: 30px;
+    border: 1px solid rgb(202, 202, 202);
+    margin-bottom: 20px;
+}
+
+.likeLink{
+    margin-top: 10px;
+}
+
+li{
+    display: inline;
+  }
+
+  .optMenu{
+    margin-right: 30px;
+  }
+  
+  .optMenu a{
+    color: white;
+    font-weight: normal;
+    text-decoration: none; /* Quitar subrayado */
+    padding-left: 20px; /* Espaciado a la izquierda para la imagen */
+    background-size: 16px 16px; /* Tamaño de la imagen */
+    display: inline-block; /* Para que la imagen y el texto estén en la misma línea */
+    line-height: 16px; /* Ajustar la altura de línea según el tamaño de la imagen */
+    vertical-align: middle; /* Alinear verticalmente el texto con la imagen */
+    font-size: 20px;
+  }
+  
+  .optMenu a:visited{
+    color: white;
+  }
+
+.modal{
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open{
+  opacity: 1;
+  z-index: 999;
+}
+
+.modal-inner{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 15px 25px;
+  text-align: center;
+  width: 380px;
+}
+
+.modal-inner h2{
+  margin: 0;
+}
+
+.modal-inner{
+  line-height: 24px;
+  margin: 10px 0;
+}
+
+.modalCan{
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalCan.open{
+  opacity: 1;
+  z-index: 999;
+}
+
+.modalCan-inner{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 15px 25px;
+  text-align: center;
+  width: 380px;
+}
+
+.modalCan-inner h2{
+  margin: 0;
+}
+
+.modalCan-inner{
+  line-height: 24px;
+  margin: 10px 0;
+}
+
+/* only animate if the device supports hover */
+@media (hover: hover) {
+  #creditcard {
+    /*  set start position */
+    transform: translateY(110px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  #money {
+    /*  set start position */
+    transform: translateY(180px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  button:hover #creditcard {
+    transform: translateY(0px);
+    transition: transform 0.2s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+
+  button:hover #money {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button:hover .button__text span {
+  transform: translateY(-0.25rem);
+  transition: transform .2s ease-in-out;
+}
+
+/* styling */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+.button {
+  border: none;
+  outline: none;
+  background-color: purple;
+  padding: 1rem 90px 1rem 2rem;
+  position: relative;
+  border-radius: 8px;
+  letter-spacing: 0.7px;
+  background-color: #5086bd;
+  color: #fff;
+  font-size: 21px;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button__svg {
+  position: absolute;
+  overflow: visible;
+  bottom: 6px;
+  right: 0.2rem;
+  height: 140%;
+}

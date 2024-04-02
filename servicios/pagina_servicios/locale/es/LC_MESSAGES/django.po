@@ -1,0 +1,390 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-02 13:25-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: servicios/pagina_servicios/templates/Comentarios.html:54
+#: servicios/pagina_servicios/templates/Envivo.html:55
+#: servicios/pagina_servicios/templates/Reacciones.html:54
+#: servicios/pagina_servicios/templates/Reproducciones.html:55
+#: servicios/pagina_servicios/templates/Seguidores.html:55
+#: servicios/pagina_servicios/templates/carrito.html:56
+#: servicios/pagina_servicios/templates/compartidas.html:54
+#: servicios/pagina_servicios/templates/index.html:51
+#: servicios/pagina_servicios/templates/likes.html:54
+#: servicios/pagina_servicios/templates/perfil.html:60
+#: servicios/pagina_servicios/templates/rt.html:54
+#: servicios/pagina_servicios/templates/supervisor.html:54
+#: servicios/pagina_servicios/templates/votos.html:55
+msgid "Servicios de redes sociales"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:57
+#: servicios/pagina_servicios/templates/Envivo.html:58
+#: servicios/pagina_servicios/templates/Reacciones.html:57
+#: servicios/pagina_servicios/templates/Reproducciones.html:58
+#: servicios/pagina_servicios/templates/Seguidores.html:58
+#: servicios/pagina_servicios/templates/carrito.html:59
+#: servicios/pagina_servicios/templates/compartidas.html:57
+#: servicios/pagina_servicios/templates/index.html:54
+#: servicios/pagina_servicios/templates/likes.html:57
+#: servicios/pagina_servicios/templates/perfil.html:63
+#: servicios/pagina_servicios/templates/rt.html:57
+#: servicios/pagina_servicios/templates/supervisor.html:57
+#: servicios/pagina_servicios/templates/votos.html:58
+msgid "Pagina de compra de bots para redes sociales"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:75
+#: servicios/pagina_servicios/templates/Envivo.html:76
+#: servicios/pagina_servicios/templates/Reacciones.html:75
+#: servicios/pagina_servicios/templates/Reproducciones.html:76
+#: servicios/pagina_servicios/templates/Seguidores.html:76
+#: servicios/pagina_servicios/templates/carrito.html:77
+#: servicios/pagina_servicios/templates/compartidas.html:75
+#: servicios/pagina_servicios/templates/index.html:72
+#: servicios/pagina_servicios/templates/likes.html:75
+#: servicios/pagina_servicios/templates/perfil.html:81
+#: servicios/pagina_servicios/templates/rt.html:75
+#: servicios/pagina_servicios/templates/votos.html:76
+msgid "Inicio"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:76
+#: servicios/pagina_servicios/templates/Envivo.html:77
+#: servicios/pagina_servicios/templates/Reacciones.html:76
+#: servicios/pagina_servicios/templates/Reproducciones.html:77
+#: servicios/pagina_servicios/templates/Seguidores.html:77
+#: servicios/pagina_servicios/templates/compartidas.html:76
+#: servicios/pagina_servicios/templates/index.html:73
+#: servicios/pagina_servicios/templates/likes.html:76
+#: servicios/pagina_servicios/templates/rt.html:76
+#: servicios/pagina_servicios/templates/votos.html:77
+msgid "Perfil"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:77
+#: servicios/pagina_servicios/templates/Envivo.html:78
+#: servicios/pagina_servicios/templates/Reacciones.html:77
+#: servicios/pagina_servicios/templates/Reproducciones.html:78
+#: servicios/pagina_servicios/templates/Seguidores.html:78
+#: servicios/pagina_servicios/templates/compartidas.html:77
+#: servicios/pagina_servicios/templates/index.html:74
+#: servicios/pagina_servicios/templates/likes.html:77
+#: servicios/pagina_servicios/templates/rt.html:77
+#: servicios/pagina_servicios/templates/votos.html:78
+msgid "Recargar Saldo"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:78
+#: servicios/pagina_servicios/templates/Envivo.html:79
+#: servicios/pagina_servicios/templates/Reacciones.html:78
+#: servicios/pagina_servicios/templates/Reproducciones.html:79
+#: servicios/pagina_servicios/templates/Seguidores.html:79
+#: servicios/pagina_servicios/templates/compartidas.html:78
+#: servicios/pagina_servicios/templates/index.html:75
+#: servicios/pagina_servicios/templates/likes.html:78
+#: servicios/pagina_servicios/templates/rt.html:78
+#: servicios/pagina_servicios/templates/votos.html:79
+msgid "Iniciar Sesión"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:79
+#: servicios/pagina_servicios/templates/Envivo.html:80
+#: servicios/pagina_servicios/templates/Reacciones.html:79
+#: servicios/pagina_servicios/templates/Reproducciones.html:80
+#: servicios/pagina_servicios/templates/Seguidores.html:80
+#: servicios/pagina_servicios/templates/compartidas.html:79
+#: servicios/pagina_servicios/templates/index.html:76
+#: servicios/pagina_servicios/templates/likes.html:79
+#: servicios/pagina_servicios/templates/rt.html:79
+#: servicios/pagina_servicios/templates/votos.html:80
+msgid "Registrarse"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:86
+msgid "Comprar comentarios"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:87
+#: servicios/pagina_servicios/templates/Envivo.html:88
+#: servicios/pagina_servicios/templates/Reacciones.html:87
+#: servicios/pagina_servicios/templates/Reproducciones.html:88
+#: servicios/pagina_servicios/templates/Seguidores.html:88
+#: servicios/pagina_servicios/templates/likes.html:87
+#: servicios/pagina_servicios/templates/rt.html:87
+#: servicios/pagina_servicios/templates/votos.html:88
+msgid "Le precio varia en base al precio del dia del dolar"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:94
+msgid "Ingrese el número de comentarios:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:97
+msgid "Num. de comentarios"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:100
+#: servicios/pagina_servicios/templates/Envivo.html:110
+#: servicios/pagina_servicios/templates/Reacciones.html:111
+#: servicios/pagina_servicios/templates/Reproducciones.html:100
+#: servicios/pagina_servicios/templates/Seguidores.html:100
+#: servicios/pagina_servicios/templates/compartidas.html:99
+#: servicios/pagina_servicios/templates/likes.html:99
+#: servicios/pagina_servicios/templates/rt.html:99
+#: servicios/pagina_servicios/templates/votos.html:110
+msgid "Ingrese el link:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:103
+#: servicios/pagina_servicios/templates/Envivo.html:113
+#: servicios/pagina_servicios/templates/Reacciones.html:114
+#: servicios/pagina_servicios/templates/Reproducciones.html:103
+#: servicios/pagina_servicios/templates/Seguidores.html:103
+#: servicios/pagina_servicios/templates/compartidas.html:102
+#: servicios/pagina_servicios/templates/likes.html:102
+#: servicios/pagina_servicios/templates/rt.html:102
+#: servicios/pagina_servicios/templates/votos.html:113
+msgid "Link"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Comentarios.html:105
+#: servicios/pagina_servicios/templates/Envivo.html:115
+#: servicios/pagina_servicios/templates/Reacciones.html:116
+#: servicios/pagina_servicios/templates/Reproducciones.html:105
+#: servicios/pagina_servicios/templates/Seguidores.html:105
+#: servicios/pagina_servicios/templates/compartidas.html:104
+#: servicios/pagina_servicios/templates/likes.html:104
+#: servicios/pagina_servicios/templates/rt.html:104
+#: servicios/pagina_servicios/templates/votos.html:115
+msgid "Agregar al carrito"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Envivo.html:87
+msgid "Comprar espectadores"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Envivo.html:94
+msgid "Seleccione el tiempo:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Envivo.html:97
+msgid "Escoger tiempo"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Envivo.html:104
+#: servicios/pagina_servicios/templates/Envivo.html:107
+msgid "Num. de espectadores"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:86
+msgid "Comprar reacciones FACEBOOK"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:92
+msgid "Seleccione la opcion de reaccion deseada:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:95
+msgid "Escoger reaccion"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:96
+msgid "Me gusta"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:97
+msgid "Me encanta"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:98
+msgid "Me importa"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:99
+msgid "Me divierte"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:100
+msgid "Me asombra"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:101
+msgid "Me entristece"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:102
+msgid "Me enoja"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:105
+msgid "Ingrese el numero de reacciones:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reacciones.html:108
+msgid "Num. de reacciones"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reproducciones.html:87
+msgid "Comprar Reproducciones"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reproducciones.html:94
+msgid "Ingrese el numero de reproducciones:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Reproducciones.html:97
+msgid "Num. de reproducciones"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Seguidores.html:87
+msgid "Comprar seguidores"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Seguidores.html:94
+msgid "Ingrese el numero de seguidores deseados:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/Seguidores.html:97
+msgid "Num. de seguidores"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/compartidas.html:86
+msgid "Comprar compartidas"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/compartidas.html:87
+msgid "El precio varia en base al precio del dia del dolar"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/compartidas.html:93
+msgid "Ingrese el numero de compartidas deseadas:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/compartidas.html:96
+msgid "Num. de compartidas"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:86
+msgid "Facebook"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:92
+msgid "REACCIONES"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:99
+#: servicios/pagina_servicios/templates/index.html:154
+#: servicios/pagina_servicios/templates/index.html:173
+msgid "COMENTARIOS"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:105
+#: servicios/pagina_servicios/templates/index.html:204
+msgid "REPRODUCCIONES"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:111
+msgid "ENVIVO"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:117
+msgid "COMPARTIDAS"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:123
+#: servicios/pagina_servicios/templates/index.html:160
+#: servicios/pagina_servicios/templates/index.html:186
+#: servicios/pagina_servicios/templates/index.html:198
+msgid "SEGUIDORES"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:129
+msgid "Twitter"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:135
+msgid "VOTOS"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:141
+msgid "RETWITT"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:147
+#: servicios/pagina_servicios/templates/index.html:179
+msgid "LIKES"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:166
+msgid "Instagram"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/index.html:192
+msgid "Tik tok"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/likes.html:86
+msgid "Comprar likes"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/likes.html:93
+msgid "Ingrese el numero de likes:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/likes.html:96
+msgid "Num. de likes"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/rt.html:86
+msgid "Comprar Retweets"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/rt.html:93
+msgid "Ingrese el numero de retweet deseados:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/rt.html:96
+msgid "Num. de retweets"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/supervisor.html:75
+msgid "Cerrar sesión"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/votos.html:87
+msgid "Comprar votos TWITTER"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/votos.html:94
+msgid "Seleccione la opcion de voto deseado:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/votos.html:97
+msgid "Escoger numero voto"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/votos.html:104
+msgid "Ingrese el numero de votos:"
+msgstr ""
+
+#: servicios/pagina_servicios/templates/votos.html:107
+msgid "Num. de votos"
+msgstr ""

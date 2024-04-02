@@ -1,0 +1,225 @@
+{% load static%}
+{% load i18n%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="{% static 'js/navAppear.js' %}"></script>
+
+    <title>Compra-Bots</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+    </style>
+     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+     <!-- Font Awesome -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</head>
+<nav class="w-full py-4 bg-blue-800 shadow">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
+
+        <nav>
+            <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+                <li><a class="hover:text-gray-200 hover:underline px-4" href="#"></a></li>
+                <li><a class="hover:text-gray-200 hover:underline px-4" href="#"></a></li>
+            </ul>
+        </nav>
+
+        <div class="flex items-center text-lg no-underline text-white pr-6">
+            <a class="" href="#">
+            </a>
+            <a class="pl-6" href="#">
+            </a>
+            <a class="pl-6" href="#">
+            </a>
+            <a class="pl-6" href="#">
+            </a>
+        </div>
+    </div>
+
+</nav>
+<body class="bg-white font-family-karla">
+    <header>
+        <div class="flex flex-col items-center py-12">
+            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+                {% trans "Servicios de redes sociales" %}
+            </a>
+            <p class="text-lg text-gray-600">
+                {% trans "Pagina de compra de bots para redes sociales" %}
+            </a>
+            </p>
+        </div>
+    </header> 
+        <!-- Barra de navegación principal -->
+    <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
+        <!-- Botón para pantallas pequeñas -->
+        <div class="block sm:hidden">
+            <button
+                @click="open = !open"
+                class="text-base font-bold uppercase text-center flex justify-center items-center w-full">
+                {% trans Menu %} <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="fas ml-2"></i>
+            </button>
+        </div>
+        
+        <!-- Enlaces del menú, visibles en pantallas grandes o cuando 'open' es verdadero -->
+        <div :class="{'block': open, 'hidden': !open}" class="sm:flex sm:items-center w-full container mx-auto flex flex-col sm:flex-row justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
+            <a href="{% url 'user_dashboard' %}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">{% trans "Inicio" %}</a>
+            <a id="perfilLink" href="{% url 'perfil' %}" class="hidden sm:block hover:bg-gray-400 rounded py-2 px-4 mx-2">{% trans "Perfil" %}</a>
+            <a id="saldoLink" href="{% url 'perfil' %}#walletContainer" class="hidden sm:block hover:bg-gray-400 rounded py-2 px-4 mx-2">{% trans "Recargar Saldo" %}</a>
+            <a id="iniciarLink" href="{% url 'login_view' %}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">{% trans "Iniciar Sesión" %}</a>
+            <a id="registrarLink" href="{% url 'registro_usuario' %}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">{% trans "Registrarse" %}</a>
+        </div>
+    </nav>
+    </nav>  
+    <div class="container mx-auto py-6 px-4">
+        <section class="shadow my-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
+                    <img class="mb-6 h-20 w-20 rounded-full mx-auto" src="{% static 'img/facebook.png' %}" alt="">
+                    <h5 class="text-xl font-semibold text-center text-gray-900 dark:text-white">
+                        {% trans "Facebook" %}
+                    </h5>
+                    <a href="{% url 'reacciones' %}?id=reacciones_Facebook" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-100 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-200 focus:bg-blue-100 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="reacciones_Facebook">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg>                      
+                        <span class="flex-1 ms-3 whitespace-nowrap"> {% trans "REACCIONES" %}</span>
+                    </a>
+                    <a href="{% url 'comentarios' %}?id=comentarios_Facebook" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-100 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-200 focus:bg-blue-100 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="comentarios_Facebook">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1v2a1 1 0 0 0 1.707.707L9.414 13H15a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4Z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M8.023 17.215c.033-.03.066-.062.098-.094L10.243 15H15a3 3 0 0 0 3-3V8h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1v2a1 1 0 0 1-1.707.707L14.586 18H9a1 1 0 0 1-.977-.785Z" clip-rule="evenodd"/>
+                        </svg>                      
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "COMENTARIOS" %}</span>
+                    </a>
+                    <a href="{% url 'reproducciones' %}?id=reproducciones_Facebook" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-100 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-200 focus:bg-blue-100 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="reproducciones_Facebook">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z" clip-rule="evenodd"/>
+                        </svg>                      
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "REPRODUCCIONES" %}</span>
+                    </a>
+                    <a href="{% url 'envivo' %}?id=envivo_Facebook" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-100 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-200 focus:bg-blue-100 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="envivo_Facebook">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z" clip-rule="evenodd"/>
+                        </svg>                      
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "ENVIVO" %}</span>
+                    </a>
+                    <a href="{% url 'compartidas' %}?id=compartidas_Facebook" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-100 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-200 focus:bg-blue-100 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="compartidas_Facebook">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M14.516 6.743c-.41-.368-.443-1-.077-1.41a.99.99 0 0 1 1.405-.078l5.487 4.948.007.006A2.047 2.047 0 0 1 22 11.721a2.06 2.06 0 0 1-.662 1.51l-5.584 5.09a.99.99 0 0 1-1.404-.07 1.003 1.003 0 0 1 .068-1.412l5.578-5.082a.05.05 0 0 0 .015-.036.051.051 0 0 0-.015-.036l-5.48-4.942Zm-6.543 9.199v-.42a4.168 4.168 0 0 0-2.715 2.415c-.154.382-.44.695-.806.88a1.683 1.683 0 0 1-2.167-.571 1.705 1.705 0 0 1-.279-1.092V15.88c0-3.77 2.526-7.039 5.967-7.573V7.57a1.957 1.957 0 0 1 .993-1.838 1.931 1.931 0 0 1 2.153.184l5.08 4.248a.646.646 0 0 1 .012.011l.011.01a2.098 2.098 0 0 1 .703 1.57 2.108 2.108 0 0 1-.726 1.59l-5.08 4.25a1.933 1.933 0 0 1-2.929-.614 1.957 1.957 0 0 1-.217-1.04Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "COMPARTIDAS" %}</span>
+                    </a>
+                    <a href="{% url 'seguidores' %}?id=seguidores_Facebook" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-100 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-200 focus:bg-blue-100 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="seguidores_Facebook">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                        </svg>                      
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "SEGUIDORES" %}</span>
+                    </a>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
+                    <img class="mb-6 h-20 w-20 rounded-full mx-auto" src="{% static 'img/twitter.png' %}" alt="">
+                    <h5 class="text-xl font-semibold text-center text-gray-900 dark:text-white">
+                        {% trans "Twitter"%}
+                    </h5>
+                    <a href="{% url 'votos' %}?id=votos_Twitter" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-300 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-400 focus:bg-blue-300 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="votos_Twitter">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8.032 12 1.984 1.984 4.96-4.96m4.55 5.272.893-.893a1.984 1.984 0 0 0 0-2.806l-.893-.893a1.984 1.984 0 0 1-.581-1.403V7.04a1.984 1.984 0 0 0-1.984-1.984h-1.262a1.983 1.983 0 0 1-1.403-.581l-.893-.893a1.984 1.984 0 0 0-2.806 0l-.893.893a1.984 1.984 0 0 1-1.403.581H7.04A1.984 1.984 0 0 0 5.055 7.04v1.262c0 .527-.209 1.031-.581 1.403l-.893.893a1.984 1.984 0 0 0 0 2.806l.893.893c.372.372.581.876.581 1.403v1.262a1.984 1.984 0 0 0 1.984 1.984h1.262c.527 0 1.031.209 1.403.581l.893.893a1.984 1.984 0 0 0 2.806 0l.893-.893a1.985 1.985 0 0 1 1.403-.581h1.262a1.984 1.984 0 0 0 1.984-1.984V15.7c0-.527.209-1.031.581-1.403Z"/>
+                          </svg>                          
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "VOTOS" %}</span>
+                    </a>
+                    <a href="{% url 'rt' %}?id=retwitt_Twitter" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-300 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-400 focus:bg-blue-300 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="retwitt_Twitter">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5.027 10.9a8.729 8.729 0 0 1 6.422-3.62v-1.2A2.061 2.061 0 0 1 12.61 4.2a1.986 1.986 0 0 1 2.104.23l5.491 4.308a2.11 2.11 0 0 1 .588 2.566 2.109 2.109 0 0 1-.588.734l-5.489 4.308a1.983 1.983 0 0 1-2.104.228 2.065 2.065 0 0 1-1.16-1.876v-.942c-5.33 1.284-6.212 5.251-6.25 5.441a1 1 0 0 1-.923.806h-.06a1.003 1.003 0 0 1-.955-.7A10.221 10.221 0 0 1 5.027 10.9Z"/>
+                          </svg>                          
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "RETWITT" %}</span>
+                    </a>
+                    <a href="{% url 'likes' %}?id=likes_Twitter" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-300 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-400 focus:bg-blue-300 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="likes_Twitter">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg>   
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "LIKES" %}</span>
+                    </a>
+                    <a href="{% url 'comentarios' %}?id=comentarios_Twitter" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-300 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-400 focus:bg-blue-300 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="comentarios_Twitter">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1v2a1 1 0 0 0 1.707.707L9.414 13H15a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4Z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M8.023 17.215c.033-.03.066-.062.098-.094L10.243 15H15a3 3 0 0 0 3-3V8h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1v2a1 1 0 0 1-1.707.707L14.586 18H9a1 1 0 0 1-.977-.785Z" clip-rule="evenodd"/>
+                        </svg>        
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "COMENTARIOS" %}</span>
+                    </a>
+                    <a href="{% url 'seguidores' %}?id=seguidores_Twitter" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-blue-300 border-2 border-white hover:border-blue-500 focus:border-blue-500 hover:bg-blue-400 focus:bg-blue-300 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="seguidores_Twitter">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "SEGUIDORES" %}</span>
+                    </a>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
+                    <img class="mb-6 h-20 w-20 rounded-full mx-auto" src="{% static 'img/instagram.png' %}" alt="">
+                    <h5 class="text-xl font-semibold text-center text-gray-900 dark:text-white">
+                        {% trans "Instagram" %}
+                    </h5>
+                    <a href="{% url 'comentarios' %}?id=comentarios_Instagram"  class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-purple-400 border-2 border-white hover:border-purple-500 focus:border-purple-500 hover:bg-purple-500 focus:bg-purple-400 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="comentarios_Instagram">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1v2a1 1 0 0 0 1.707.707L9.414 13H15a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4Z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M8.023 17.215c.033-.03.066-.062.098-.094L10.243 15H15a3 3 0 0 0 3-3V8h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1v2a1 1 0 0 1-1.707.707L14.586 18H9a1 1 0 0 1-.977-.785Z" clip-rule="evenodd"/>
+                        </svg>        
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "COMENTARIOS" %}</span>
+                    </a>
+                    <a href="{% url 'likes' %}?id=likes_Instagram"  class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-purple-400 border-2 border-white hover:border-purple-500 focus:border-purple-500 hover:bg-purple-500 focus:bg-purple-400 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="likes_Instagram">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg>   
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "LIKES" %}</span>
+                        
+                    </a>
+                    <a href="{% url 'seguidores' %}?id=seguidores_Instagram"  class="flex items-center justify-center p-3 mb-2 text-base font-bold text-gray-900 rounded-lg bg-purple-400 border-2 border-white hover:border-purple-500 focus:border-purple-500 hover:bg-purple-500 focus:bg-purple-400 group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" id="seguidores_Instagram">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "SEGUIDORES" %}</span>
+                    </a>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
+                    <img class="mb-6 h-20 w-20 rounded-full mx-auto" src="{% static 'img/tik-tok.png' %}" alt="">
+                    <h5 class="text-xl font-semibold text-center text-gray-900 dark:text-white">
+                        {% trans "Tik tok" %}
+                    </h5>
+                    <a href="{% url 'seguidores' %}?id=seguidores_Tiktok" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-white rounded-lg bg-black border-2 border-white hover:border-gray-700 focus:border-gray-700 hover:bg-gray-800 focus:bg-black group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500" id="seguidores_Tiktok">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "SEGUIDORES" %}</span>
+                    </a>
+                    <a href="{% url 'reproducciones' %}?id=reproducciones_Tiktok" class="flex items-center justify-center p-3 mb-2 text-base font-bold text-white rounded-lg bg-black border-2 border-white hover:border-gray-700 focus:border-gray-700 hover:bg-gray-800 focus:bg-black group hover:shadow-md focus:shadow-md transition-all dark:bg-gray-600 dark:hover:bg-gray-500" id="reproducciones_Tiktok">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z" clip-rule="evenodd"/>
+                        </svg>  
+                        <span class="flex-1 ms-3 whitespace-nowrap">{% trans "REPRODUCCIONES" %}</span>
+                    </a>
+                </div>
+            </div>
+            <a href="https://wa.me/9983976203" target="_blank" class="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full text-white hover:bg-green-600 transition duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                    <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                </svg>
+            </a>
+        </section>
+    </div>
+    <footer class="w-full border-t bg-white pb-12">
+        <div class="w-full container mx-auto flex flex-col items-center">
+            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+            </div>
+            <div class="uppercase pb-6">Asistencia al cliente via Whatsapp, mediante el boton en la parte inferior derecha</div>
+        </div>
+    </footer>
+</body>
+</html>

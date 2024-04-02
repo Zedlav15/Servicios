@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Pago</title>
+</head>
+<body>
+    <h1>Crear un Pago en BTC</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="usd_amount">Monto en USD:</label>
+        <input type="number" id="usd_amount" name="usd_amount" min="50" required>
+        <button type="submit">Crear Pago</button>
+    </form>
+    
+    {% if btc_address %}
+        <div>
+            <p>Por favor, envía el pago a la siguiente dirección de Bitcoin:</p>
+            <p><strong>Dirección:</strong> {{ btc_address }}</p>
+            <p><strong>Monto en BTC:</strong> {{ btc_amount }}</p>
+        </div>
+        <!-- Añadir aquí el formulario o mecanismo para verificar el pago -->
+    {% endif %}
+    
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

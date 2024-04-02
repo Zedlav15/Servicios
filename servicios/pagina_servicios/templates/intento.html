@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pago con Criptomoneda</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .container { max-width: 600px; margin: auto; padding: 20px; }
+  #paymentAddress, #paymentStatus { margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Realiza tu pago con Criptomoneda</h2>
+  <button id="generateAddressBtn">Generar Dirección de Pago</button>
+  <p id="paymentAddress"></p>
+  
+  <button id="verifyPaymentBtn" style="display:none;">Verificar Pago</button>
+  <p id="paymentStatus"></p>
+</div>
+
+<script>
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function getLanguagePrefix() {
+    const pathArray = window.location.pathname.split('/');
+    // Asume que el idioma siempre es el primer segmento de la ruta
+    return pathArray[1];
+}
+
+const langPrefix = getLanguagePrefix();
+const generateAddressUrl = `/${langPrefix}/generate_address/`;
+const verifyPaymentUrl = `/${langPrefix}/verify_payment/`; 
+
+document.getElementById('generateAddressBtn').addEventListener('click', function() {
+  fetch(generateAddressUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRFToken': getCookie('csrftoken') // Incluye el token CSRF
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('paymentAddress').textContent = `Dirección para el pago: ${data.address}`;
+    const verifyBtn = document.getElementById('verifyPaymentBtn');
+    verifyBtn.style.display = 'block';
+    verifyBtn.onclick = function() { verifyPayment(data.payment_id); };
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('paymentAddress').textContent = 'Error al generar la dirección de pago.';
+  });
+});
+
+function verifyPayment(paymentId) {
+  const verifyUrlWithId = verifyPaymentUrl + paymentId;
+  fetch(verifyUrlWithId, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRFToken': getCookie('csrftoken') // Incluye el token CSRF
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('paymentStatus').textContent = `Estado del pago: ${data.status}`;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('paymentStatus').textContent = 'Error al verificar el pago.';
+  });
+}
+</script>
+</body>
+</html>

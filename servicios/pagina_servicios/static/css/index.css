@@ -1,0 +1,303 @@
+body{
+  background-color: #FFF0CE
+}
+
+header{
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.3);
+    background-color: #FFC436;
+    font-weight: normal;
+    font-family: "Raleway", sans-serif;
+}
+
+.h1Title{
+    font-weight: normal;
+    font-size: 50px;
+}
+
+.optServicesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-family: "Rubik", sans-serif;
+}
+    
+.serviceContainer {font-family: "Raleway", sans-serif; grid-area: 1 / 1 / 2 / 2; background-color: white; border-radius: 10px; text-align: center; display: grid; width:auto; height: 500px; padding-top: 20px; padding-bottom: 30px; box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3); /* Sombra */}
+.serviceContainer2 {font-family: "Raleway", sans-serif; grid-area: 1 / 2 / 2 / 3; background-color: white; border-radius: 10px; text-align: center; display: grid; width:auto; height: 500px; padding-top: 20px; padding-bottom: 30px; box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3); /* Sombra */}
+.serviceContainer3 {font-family: "Raleway", sans-serif; grid-area: 2 / 1 / 3 / 2; background-color: white; border-radius: 10px; text-align: center; display: grid; width:auto; height: 400px; padding-top: 20px; padding-bottom: 30px; box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3); /* Sombra */}
+.serviceContainer4 {font-family: "Raleway", sans-serif; grid-area: 2 / 2 / 3 / 3; background-color: white; border-radius: 10px; text-align: center; display: grid; width:auto; height: 400px; padding-top: 20px; padding-bottom: 30px; box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3); /* Sombra */}
+
+.imgFacebook{
+    height: 50px;
+    width: 50px;
+}
+
+.imgTwitter{
+    height: 50px;
+    width: 50px;
+}
+.imgInstagram{
+    height: 50px;
+    width: 50px;
+}
+
+.imgTiktok{
+    height: 50px;
+    width: 50px;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.optNameContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*** ESTILOS BOTÓN SLIDE TOP ***/
+.ov-btn-slide-top {
+  background: #fff; /* color de fondo */
+  color: #1976d2; /* color de fuente */
+  border: 2px solid #1976d2; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+}
+.ov-btn-slide-top:hover {
+  color: #fff; /* color de fuente hover */
+}
+.ov-btn-slide-top::after {
+  content: "";
+  background: #1976d2; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: -100%;
+  bottom: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.ov-btn-slide-top:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+
+
+/*** ESTILOS BOTÓN SLIDE TOP TWITTER***/
+.ov-btn-slide-top-twitter {
+    background: #fff; /* color de fondo */
+    color: #03a9f4; /* color de fuente */
+    border: 2px solid #03a9f4; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+  }
+  .ov-btn-slide-top-twitter:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .ov-btn-slide-top-twitter::after {
+    content: "";
+    background: #03a9f4; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-top-twitter:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+  /*** ESTILOS BOTÓN SLIDE TOP INSTAGRAM***/
+.ov-btn-slide-top-instagram {
+    background: #fff; /* color de fondo */
+    color: linear-gradient(to right, #ffce52, #ff553e, #cc39a1); /* gradiente de fondo de Instagram */; /* color de fuente */
+    border: 2px solid; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    border-image: linear-gradient(to right, #ffce52, #ff553e, #cc39a1); /* gradiente para el borde */
+    border-image-slice: 1;
+    text-decoration: none;
+  }
+  .ov-btn-slide-top-instagram:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .ov-btn-slide-top-instagram::after {
+    content: "";
+    background: linear-gradient(to right, #ffce52, #ff553e, #cc39a1); /* gradiente de fondo de Instagram */; /* color de fuente */; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-top-instagram:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+    /*** ESTILOS BOTÓN SLIDE TOP TIKTOK***/
+.ov-btn-slide-top-tiktok {
+    background: #fff; /* color de fondo */
+    color: black; /* color de fuente */
+    border: 2px solid black; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    
+  }
+  .ov-btn-slide-top-tiktok:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .ov-btn-slide-top-tiktok::after {
+    content: "";
+    background: rgb(0, 0, 0) /* gradiente de fondo de Instagram */; /* color de fuente */; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-top-tiktok:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+  .labelFacebook{
+    font-size: 50px;
+    color: #1976d2;
+  }
+  
+  .labelTwitter{
+    font-size: 50px;
+    color: #03a9f4;
+  }
+
+.labelInstagram{
+    font-size: 50px;
+    color: #f04c59
+}
+
+.labelTiktok{
+  font-size: 50px;
+}
+
+/* Estilo para los elementos <li> del menú */
+.optMenu ul li {
+  display: inline !important;  /* Mostrar los elementos en línea */
+  margin-right: 10px; /* Espacio entre los elementos */
+}
+
+/* Estilo para los enlaces dentro del menú */
+.optMenu a {
+  color: white;
+  font-weight: normal;
+  text-decoration: none; /* Quitar subrayado */
+  padding-left: 20px; /* Espaciado a la izquierda para la imagen */
+  background-size: 16px 16px; /* Tamaño de la imagen */
+  display: inline-block; /* Para que la imagen y el texto estén en la misma línea */ 
+  line-height: 16px; /* Ajustar la altura de línea según el tamaño de la imagen */
+  vertical-align: middle; /* Alinear verticalmente el texto con la imagen */
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Estilo para los enlaces visitados dentro del menú */
+.optMenu a:visited {
+  color: white;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+  display: none;
+}
+
+.btn-wsp{
+  position:fixed;
+  width:60px;
+  height:60px;
+  line-height: 63px;
+  bottom:25px;
+  right:25px;
+  background:#0df053;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:35px;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+  z-index:100;
+}
+
+.btn-wsp:hover{
+  text-decoration: none;
+  color: #0df053;
+  background: #fff;
+}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Pago</title>
+</head>
+<body>
+    <h1>Verificar Pago</h1>
+    <form action="" method="post" id="verifyPaymentForm">
+        {% csrf_token %}
+        <label for="paymentId">ID de Pago:</label>
+        <input type="text" id="paymentId" name="payment_id" required>
+        <button type="submit">Verificar Pago</button>
+    </form>
+    <script>
+        document.getElementById('verifyPaymentForm').onsubmit = function(e) {
+            e.preventDefault();
+            const paymentId = document.getElementById('paymentId').value;
+            fetch(`/verify_payment/${paymentId}/`, { method: 'POST', headers: { 'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value } })
+                .then(response => response.json())
+                .then(data => alert(`Estado: ${data.status}\nMensaje: ${data.message || JSON.stringify(data.details)}`))
+                .catch(error => alert('Error: ' + error));
+        };
+    </script>
+</body>
+</html>

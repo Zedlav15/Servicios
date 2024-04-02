@@ -1,0 +1,49 @@
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <title>Registro</title>
+</head>
+<body class="bg-white">
+    <div class="flex min-h-screen bg-white">
+        <div class="w-1/2 bg-cover md:block hidden" style="background-image:  url(https://images.unsplash.com/photo-1520243947988-b7b79f7873e9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDd8fGJsYWNrJTIwZm9yZXN0fGVufDB8fDB8eWVsbG93&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60)"></div>
+        <div class="md:w-1/2 max-w-lg mx-auto my-24 px-4 py-5 shadow-none">
+            <div class="text-left p-0 font-sans">
+                <h1 class=" text-gray-800 text-3xl font-medium">Crea tu cuenta</h1>
+                <h3 class="p-1 text-gray-700">Registro</h3>
+            </div>
+            {% if messages %}
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    {% for message in messages %}
+                        <span class="block sm:inline">{{ message }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <br>
+    <form method="post" class="p-0">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="mb-5">
+          <label for="{{ field.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">
+            {{ field.label }}
+          </label>
+          {% render_field field class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent " %}
+          {% if field.help_text %}
+          <p class="text-xs italic text-gray-600">{{ field.help_text }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+        <input type="submit" value="Registrarse" class="py-3 bg-green-500 text-white w-full rounded hover:bg-green-600">
+
+    </form>
+    <a class="" href="{% url 'login_view' %}" data-test="Link"><span class="block  p-5 text-center text-gray-800  text-xs ">¿Ya tienes una cuenta? </span></a>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body style="background-color: #FFF0CE;">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFC436">
+            <a class="navbar-brand" href="#">Registro de usuario</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fas fa-home"></i>Inicio <span
+                                class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i>Ingresar</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-register" style="background-color: #FFF0CE">
+        <div class="acceder-loggin" style="background-color: #FFF0CE">
+            <form action="../php/login.php" method="post" id="formulario-login">
+                <h1 class="loggin-titulo">Acceder</h1>
+                <div class="cuadro-loggin">
+                    <label for="correologin" class="label" style="margin-top:25px">
+                        Correo electrónico
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="correo" name="correologin" id="correologin" class="input-correo" required>
+
+                    <label for="passwordlogin" class="label" style="margin-top:25px">
+                        Contraseña
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="password" name="passwordlogin" id="passwordlogin" class="input-correo" required>
+
+                    <div class="recuerdame">
+                        <input type="checkbox" id="recuerdame" name="recuerdame">
+                        <label for="recuerdame">Recuérdame</label>
+                    </div>
+
+                    <button type="submit" id="acceder" class="acceder">Acceso</button>
+                </div>
+            </form>
+        </div>
+        <div class="acceder-loggin" style="background-color: #FFF0CE;">
+            <form action="../php/register.php" method="post" >
+                <h1 class="registro-titulo">Registrarse</h1>
+                <div class="cuadro-registro">
+                    <label for="inputNameRegister" class="label" style="margin-top:25px">
+                        Nombre Completo
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="text" class="input-correo" name="nameRegister" id="inputNameRegister">
+                    <label for="inputTelRegister" class="label" style="margin-top:25px">
+                        Numero celular
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="number" class="input-correo" name = "NumCel" id="inputTelRegister">
+                    <label for="inputEmailRegister" class="label" style="margin-top:25px">
+                        Correo electrónico
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="email" class="input-correo" name="emailRegister" id="inputEmailRegister">
+    
+                    <label for="inputPasswordRegister" class="label" style="margin-top:25px">
+                        Contraseña
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="password" class="input-correo" name="passwordRegister" id="inputPasswordRegister">
+                    <p class="descripcion">Tus datos personales se utilizarán para procesar tu pedido, mejorar tu
+                        experiencia en esta web,
+                        gestionar el acceso a tu cuenta</p>
+                    <button type="submit" id="registrar" class="acceder" name="registerBtn">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

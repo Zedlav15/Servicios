@@ -1,0 +1,164 @@
+{% load static %}
+{% load i18n%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/carrito.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{% static 'js/payInfo.js' %}"></script>
+    <title>carrito</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</head>
+<nav class="w-full py-4 bg-blue-800 shadow">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
+
+        <nav>
+            <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+                <li><a class="hover:text-gray-200 hover:underline px-4" href="#"></a></li>
+                <li><a class="hover:text-gray-200 hover:underline px-4" href="#"></a></li>
+            </ul>
+        </nav>
+
+        <div class="flex items-center text-lg no-underline text-white pr-6">
+            <a class="" href="#">
+            </a>
+            <a class="pl-6" href="#">
+            </a>
+            <a class="pl-6" href="#">
+            </a>
+            <a class="pl-6" href="#">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<body class="bg-white font-family-karla">
+    <header>
+        <div class="flex flex-col items-center py-12">
+            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+                {% trans "Servicios de redes sociales" %}
+            </a>
+            <p class="text-lg text-gray-600">
+                {% trans "Pagina de compra de bots para redes sociales" %}
+            </a>
+            </p>
+        </div>
+    </header> 
+        <!-- Barra de navegación principal -->
+    <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
+        <!-- Botón para pantallas pequeñas -->
+        <div class="block sm:hidden">
+            <button
+                @click="open = !open"
+                class="text-base font-bold uppercase text-center flex justify-center items-center w-full">
+                {% trans Menu %} <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="fas ml-2"></i>
+            </button>
+        </div>
+        
+        <!-- Enlaces del menú, visibles en pantallas grandes o cuando 'open' es verdadero -->
+        <div :class="{'block': open, 'hidden': !open}" class="sm:flex sm:items-center w-full container mx-auto flex flex-col sm:flex-row justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
+            <a href="{% url 'user_dashboard' %}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">{% trans "Inicio" %}</a>
+            
+        </div>
+    </nav>
+    </nav>  
+    <div class="FinalizarLabelContainer">
+        <h1 class="text-5xl font-bold hover:text-gray-700 pb-4">
+            Finalizar compra
+        </h1>
+        <h2 class="text-lg text-gray-600">Al registrarte podrás realizar tu pago mediante Tarjeta de credito, debito o mediante Mercado Pago</h2>
+    </div>
+    <div class="carritoContainer">
+        <div class="facturacionContainer">
+            <h2>Detalles de facturación</h2>
+            <div class="lineSeparateMiddle"></div>
+            <label for="likeLink" class="likeLink">Ingrese correo electronico:</label>
+            <div class="form__group">
+                <input type="text" class="form__input" id="name" placeholder="Correo electronico" required="" />
+                <label for="name" class="form__label">Correo electronico</label>
+            </div>
+            <div class="lineSeparateMiddle"></div>
+            <h2>Mas información</h2>
+        </div>
+        <div class="confirmarCompraContainer content-center">
+            <h2 class="text-3xl font-bold mb-2">Tu pedido</h2>
+            <p class="text-xl">Producto: <span id="product-description"></span></p>
+            <p class="text-xl">Cantidad: <span id="quantity"></span></p>
+            <p class="text-xl">Precio unitario: <span id="unit-price"></span> USD</p>
+            <p class="text-xl">Total: <span id="total"></span> USD</p>
+            <button class="button mt-5" id="checkout-btn">
+                <span class="button__text">
+                  <span>C</span><span>o</span>m</span><span>p</span><span>r</span><span>a</span><span>r</span>
+                </span>
+                <svg class="button__svg" role="presentational" viewBox="0 0 600 600">
+                  <defs>
+                    <clipPath id="myClip">
+                      <rect x="0" y="0" width="100%" height="50%" />
+                    </clipPath>
+                  </defs>
+                  <g clip-path="url(#myClip)">
+                    <g id="money">
+                      <path d="M441.9,116.54h-162c-4.66,0-8.49,4.34-8.62,9.83l.85,278.17,178.37,2V126.37C450.38,120.89,446.56,116.52,441.9,116.54Z" fill="#699e64" stroke="#323c44" stroke-miterlimit="10" stroke-width="14" />
+                      <path d="M424.73,165.49c-10-2.53-17.38-12-17.68-24H316.44c-.09,11.58-7,21.53-16.62,23.94-3.24.92-5.54,4.29-5.62,8.21V376.54H430.1V173.71C430.15,169.83,427.93,166.43,424.73,165.49Z" fill="#699e64" stroke="#323c44" stroke-miterlimit="10" stroke-width="14" />
+                    </g>
+                    <g id="creditcard">
+                      <path d="M372.12,181.59H210.9c-4.64,0-8.45,4.34-8.58,9.83l.85,278.17,177.49,2V191.42C380.55,185.94,376.75,181.57,372.12,181.59Z" fill="#a76fe2" stroke="#323c44" stroke-miterlimit="10" stroke-width="14" />
+                      <path d="M347.55,261.85H332.22c-3.73,0-6.76-3.58-6.76-8v-35.2c0-4.42,3-8,6.76-8h15.33c3.73,0,6.76,3.58,6.76,8v35.2C354.31,258.27,351.28,261.85,347.55,261.85Z" fill="#ffdc67" />
+                      <path d="M249.73,183.76h28.85v274.8H249.73Z" fill="#323c44" />
+                    </g>
+                  </g>
+                  <g id="wallet">
+                    <path d="M478,288.23h-337A28.93,28.93,0,0,0,112,317.14V546.2a29,29,0,0,0,28.94,28.95H478a29,29,0,0,0,28.95-28.94h0v-229A29,29,0,0,0,478,288.23Z" fill="#a4bdc1" stroke="#323c44" stroke-miterlimit="10" stroke-width="14" />
+                    <path d="M512.83,382.71H416.71a28.93,28.93,0,0,0-28.95,28.94h0V467.8a29,29,0,0,0,28.95,28.95h96.12a19.31,19.31,0,0,0,19.3-19.3V402a19.3,19.3,0,0,0-19.3-19.3Z" fill="#a4bdc1" stroke="#323c44" stroke-miterlimit="10" stroke-width="14" />
+                    <path d="M451.46,435.79v7.88a14.48,14.48,0,1,1-29,0v-7.9a14.48,14.48,0,0,1,29,0Z" fill="#a4bdc1" stroke="#323c44" stroke-miterlimit="10" stroke-width="14" />
+                    <path d="M147.87,541.93V320.84c-.05-13.2,8.25-21.51,21.62-24.27a42.71,42.71,0,0,1,7.14-1.32l-29.36-.63a67.77,67.77,0,0,0-9.13.45c-13.37,2.75-20.32,12.57-20.27,25.77l.38,221.24c-1.57,15.44,8.15,27.08,25.34,26.1l33-.19c-15.9,0-28.78-10.58-28.76-25.93Z" fill="#7b8f91" />
+                    <path d="M148.16,343.22a6,6,0,0,0-6,6v92a6,6,0,0,0,12,0v-92A6,6,0,0,0,148.16,343.22Z" fill="#323c44" />
+                  </g>
+              
+                </svg>
+              </button>
+            
+            <div id="wallet_container"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-inner">
+            <h2 class="text-3xl font-bold">Confirmacion</h2>
+            <p>
+                Esta seguro que desea continuar?
+            </p>
+            <button id="closeModal" class="border-2 border-black mt-2">Confirmar</button>
+        </div>
+    </div>
+
+    <div class="modalCan" id="modalCan">
+        <div class="modalCan-inner">
+            <h2>Creditos faltantes</h2>
+            <p>
+                Usted no cuenta con los creditos sufucientes, recargue creditos
+            </p>
+            <button id="closeModalCan">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/carrito.js' %}"></script>
+</body>
+</html>

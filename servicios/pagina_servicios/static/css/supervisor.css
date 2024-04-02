@@ -1,0 +1,57 @@
+li{
+    display: inline;
+  
+  }
+  
+  .optMenu a{
+    color: white;
+    font-weight: normal;
+    text-decoration: none; /* Quitar subrayado */
+    padding-left: 20px; /* Espaciado a la izquierda para la imagen */
+    background-size: 16px 16px; /* Tamaño de la imagen */
+    display: inline-block; /* Para que la imagen y el texto estén en la misma línea */
+    line-height: 16px; /* Ajustar la altura de línea según el tamaño de la imagen */
+    vertical-align: middle; /* Alinear verticalmente el texto con la imagen */
+    font-size: 20px;
+  }
+  
+  .optMenu a:visited{
+    color: white;
+  }
+
+.tableContainer{
+  display: flex;
+  justify-content: center;
+}
+
+#tCont{
+  border: 2px solid rgb(202, 202, 202);
+  padding: 5px;
+  border-radius: 5px;
+  overflow-x: auto;
+  width: 90%;
+}
+
+#myTable{
+  width: 100%;
+}
+
+.tableClients thead th{
+  background-color: #2248c7;
+  color: white;
+}
+
+.tablePoolContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.tablePool thead th{
+  background-color: #2248c7;
+  color: white;
+}
+
+#h2Pool{
+  margin-left: 70px;
+  margin-top: 20px;
+}

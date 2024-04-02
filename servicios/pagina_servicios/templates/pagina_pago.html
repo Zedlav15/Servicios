@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pago con Criptomoneda</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .container { max-width: 600px; margin: auto; padding: 20px; }
+  #paymentAddress, #paymentStatus { margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Realiza tu pago con Criptomoneda</h2>
+  <button id="generateAddressBtn">Generar Dirección de Pago</button>
+  <p id="paymentAddress"></p>
+  
+  <button id="verifyPaymentBtn" style="display:none;">Verificar Pago</button>
+  <p id="paymentStatus"></p>
+</div>
+
+<script>
+// Asumiendo que tienes un backend corriendo que expone estas endpoints
+const generateAddressUrl = 'http://tuservidor.com/generate_address/';
+const verifyPaymentUrl = 'http://tuservidor.com/verify_payment/'; // Esta URL necesita ser completada con el ID de pago
+
+document.getElementById('generateAddressBtn').addEventListener('click', function() {
+  fetch(generateAddressUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('paymentAddress').textContent = `Dirección para el pago: ${data.address}`;
+    // Muestra el botón de verificar pago y ajusta su URL con el ID de pago
+    const verifyBtn = document.getElementById('verifyPaymentBtn');
+    verifyBtn.style.display = 'block';
+    verifyBtn.onclick = function() { verifyPayment(data.payment_id); };
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('paymentAddress').textContent = 'Error al generar la dirección de pago.';
+  });
+});
+
+function verifyPayment(paymentId) {
+  const verifyUrlWithId = verifyPaymentUrl + paymentId;
+  fetch(verifyUrlWithId, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    // Aquí debes incluir el cuerpo de la solicitud si tu backend lo requiere para la verificación
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('paymentStatus').textContent = `Estado del pago: ${data.status}`;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('paymentStatus').textContent = 'Error al verificar el pago.';
+  });
+}
+</script>
+</body>
+</html>
