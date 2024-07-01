@@ -523,8 +523,8 @@ def crear_pago(request):
 logging.basicConfig(level=logging.INFO)
 
 # Configura tus claves API aquí
-api_key = 'pGdFaqz7GKirkVbCOYkrfHcOXbNzX4AktGMRHRsZUundjuL2BwCPURfjxvKiRC3l'
-api_secret = 'u8SvmuzPcrvfhaxlBZNqhFSprlWcyP9s2RLSbr0pZXGLSG52kTuI9iwI0yYryhx5'
+api_key = 'INGRESE SU API_KEY'
+api_secret = 'INGRESE SU API_SECRET'
 client = Client(api_key, api_secret)
 
 def obtener_tiempo_servidor_binance():
